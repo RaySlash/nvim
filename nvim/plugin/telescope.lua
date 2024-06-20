@@ -9,12 +9,12 @@ local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 
 local layout_config = {
-  vertical = {
+  horizontal = {
     width = function(_, max_columns)
-      return math.floor(max_columns * 0.99)
+      return math.floor(max_columns * 0.80)
     end,
     height = function(_, _, max_lines)
-      return math.floor(max_lines * 0.99)
+      return math.floor(max_lines * 0.80)
     end,
     prompt_position = 'bottom',
     preview_cutoff = 0,
@@ -54,29 +54,18 @@ local function grep_string_current_file_type()
   grep_current_file_type(builtin.grep_string)
 end
 
---- Live grep, filtering for the current file type
-local function live_grep_current_file_type()
-  grep_current_file_type(builtin.live_grep)
-end
-
 --- Like live_grep, but fuzzy (and slower)
 local function fuzzy_grep(opts)
   opts = vim.tbl_extend('error', opts or {}, { search = '', prompt_title = 'Fuzzy grep' })
   builtin.grep_string(opts)
 end
 
-local function fuzzy_grep_current_file_type()
-  grep_current_file_type(fuzzy_grep)
-end
-
-vim.keymap.set('n', '<leader>tp', function()
+vim.keymap.set('n', '<leader>ff', function()
   builtin.find_files()
 end, { desc = '[t]elescope find files - ctrl[p] style' })
-vim.keymap.set('n', '<M-p>', builtin.oldfiles, { desc = '[telescope] old files' })
-vim.keymap.set('n', '<C-g>', builtin.live_grep, { desc = '[telescope] live grep' })
-vim.keymap.set('n', '<leader>tf', fuzzy_grep, { desc = '[t]elescope [f]uzzy grep' })
-vim.keymap.set('n', '<M-f>', fuzzy_grep_current_file_type, { desc = '[telescope] fuzzy grep filetype' })
-vim.keymap.set('n', '<M-g>', live_grep_current_file_type, { desc = '[telescope] live grep filetype' })
+vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[telescope] old files' })
+vim.keymap.set('n', '<leader>ffg', builtin.live_grep, { desc = '[telescope] live grep' })
+vim.keymap.set('n', '<leader>fg', fuzzy_grep, { desc = '[t]elescope [f]uzzy grep' })
 vim.keymap.set(
   'n',
   '<leader>t*',
@@ -109,7 +98,7 @@ telescope.setup {
     path_display = {
       'truncate',
     },
-    layout_strategy = 'vertical',
+    layout_strategy = 'horizontal',
     layout_config = layout_config,
     mappings = {
       i = {
