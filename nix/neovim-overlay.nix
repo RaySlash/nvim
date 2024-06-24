@@ -32,6 +32,8 @@ with final.pkgs.lib; let
     noice-nvim
     nui-nvim
     nvim-notify
+    yuck-vim
+    nvim-tree-lua
     nvim-treesitter.withAllGrammars
     luasnip # snippets | https://github.com/l3mon4d3/luasnip/
     # nvim-cmp (autocompletion) and extensions
@@ -89,6 +91,7 @@ with final.pkgs.lib; let
 
   extraPackages = with pkgs; [
     # language servers, etc.
+    nodePackages.typescript-language-server
     lua-language-server
     nil # nix LSP
     ccls

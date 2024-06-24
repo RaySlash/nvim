@@ -5,6 +5,8 @@ local g = vim.g
 
 g.mapleader = ' '
 g.maplocalleader = ' '
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 opt.compatible = false
 
@@ -18,7 +20,6 @@ opt.path = vim.o.path .. '**'
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
-opt.lazyredraw = true
 opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
 opt.hlsearch = true
