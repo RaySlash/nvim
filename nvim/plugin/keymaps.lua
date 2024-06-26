@@ -8,6 +8,12 @@ local fn = vim.fn
 local keymap = vim.keymap
 local diagnostic = vim.diagnostic
 
+-- STOP USING ARROW KEYS
+keymap.set('n', '<Up>', '')
+keymap.set('n', '<Down>', '')
+keymap.set('n', '<Left>', '')
+keymap.set('n', '<Right>', '')
+
 -- General
 keymap.set('n', '<C-q>', '<cmd>q!<cr>', { desc = 'Quit' })
 keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Quit' })
