@@ -55,6 +55,22 @@
         "type": "github"
       }
     },
+    "neogit-nightly": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719350969,
+        "narHash": "sha256-B9l7oWTHD5PanUZd6QxPu+ij0ut5t9l7/MiU5K5OO+M=",
+        "owner": "NeogitOrg",
+        "repo": "neogit",
+        "rev": "683f69378bde873ddec7e52e4cd8f4f0bf1dfdd0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NeogitOrg",
+        "repo": "neogit",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1716948383,
@@ -103,6 +119,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
+        "neogit-nightly": "neogit-nightly",
         "nixpkgs": "nixpkgs_2"
       }
     },
