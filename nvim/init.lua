@@ -18,6 +18,8 @@ end
 opt.path = vim.o.path .. '**'
 
 opt.number = true
+opt.background = "dark"
+opt.clipboard = "unnamedplus"
 opt.relativenumber = true
 opt.cursorline = true
 opt.showmatch = true -- Highlight matching parentheses, etc

@@ -27,13 +27,15 @@ with final.pkgs.lib; let
   # }
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
+    autoclose-nvim
     markdown-preview-nvim
-    gruvbox
+    gruvbox-nvim
     nvim-colorizer-lua
     noice-nvim
     nui-nvim
     nvim-notify
     yuck-vim
+    rustaceanvim
     nvim-tree-lua
     nvim-treesitter.withAllGrammars
     luasnip # snippets | https://github.com/l3mon4d3/luasnip/
@@ -81,8 +83,10 @@ with final.pkgs.lib; let
 
   extraPackages = with pkgs; [
     # language servers, etc.
+    eslint_d
     nodePackages.typescript-language-server
     lua-language-server
+    nixd
     nil # nix LSP
     ccls
   ];

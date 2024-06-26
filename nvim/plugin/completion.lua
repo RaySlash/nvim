@@ -97,7 +97,7 @@ cmp.setup {
         cmp.complete()
       end
     end, { 'i', 'c', 's' }),
-    ['<C-y>'] = cmp.mapping.confirm {
+    ['<C-l>'] = cmp.mapping.confirm {
       select = true,
     },
   },
@@ -147,6 +147,7 @@ cmp.setup.cmdline(':', {
     { name = 'path' },
   },
 })
+
 
 vim.keymap.set({ 'i', 'c', 's' }, '<C-n>', cmp.complete, { noremap = false, desc = '[cmp] complete' })
 vim.keymap.set({ 'i', 'c', 's' }, '<C-f>', function()
