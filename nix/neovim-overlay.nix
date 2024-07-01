@@ -87,8 +87,9 @@ with final.pkgs.lib; let
     nodePackages.typescript-language-server
     lua-language-server
     nixd
-    nil # nix LSP
+    nil
     ccls
+    rust-analyzer
   ];
 in {
   # This is the neovim derivation
